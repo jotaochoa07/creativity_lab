@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+/*
+ * Creator Lab design tokens.
+ * Source of truth: CLAUDE.md section 4, design-tokens.json, docs/design-system.md.
+ * This file closes the "notDefinedYet" gap in design-tokens.json (spacing, radius,
+ * breakpoints, shadows) — first real UI validated these values in code.
+ */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk[wght].ttf") format("truetype-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter[opsz,wght].ttf") format("truetype-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono[wght].ttf") format("truetype-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* colors — loop stages (see CLAUDE.md section 4: color identifies the
+     training-loop stage, never the skill-tree domain) */
+  --loop-inspiracion: #ffc83d;
+  --loop-investigacion: #14d8e7;
+  --loop-creacion: #ff6b6b;
+  --loop-produccion: #2563eb;
+  --loop-feedback-ia: #8b5cf6;
+  --loop-mejora: #bcff6a;
+
+  /* colors — neutrals */
+  --bg-primary: #0f172a;
+  --bg-secondary: #111827;
+  --surface: #1e293b;
+  --surface-card-hover: #26374d;
+  --border: #334155;
+  --border-strong: #475569;
+  --text-secondary: #cbd5e1;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+
+  /* colors — UI state (validations, toasts, alerts — separate from loop identity) */
+  --state-success: #34d399;
+  --state-warning: #fbbf24;
+  --state-error: #ef4444;
+  --state-info: #3b82f6;
+
+  --link: #14d8e7;
+  --link-hover: #5ce9f2;
+  --focus-ring: #14d8e7;
+
+  /* spacing — 4px base grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* breakpoints (mobile-first, min-width) */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* typography */
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
+  --fs-3xl: 40px;
+  --fs-4xl: 56px;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-normal: 1.55;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --tracking-tight: -0.01em;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.12em;
+
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* shadows — brand rule is "sin degradados / nada de sombras exageradas": near-invisible */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.35);
+  --shadow-focus: 0 0 0 3px rgba(20, 216, 231, 0.35);
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+}
+
+/*
+ * Tailwind v4 theme wiring — every utility class below (bg-loop-inspiracion,
+ * text-text-secondary, font-heading, rounded-lg, text-md, tracking-wide, ...)
+ * resolves back to the CSS custom properties above, so components use Tailwind
+ * utilities instead of inline styles while still consuming the single source
+ * of truth. Tailwind v4's default 4px spacing scale already matches
+ * --space-1..--space-24 exactly (e.g. p-4 = 16px), so it is intentionally left
+ * un-overridden.
+ */
+@theme inline {
+  --color-loop-inspiracion: var(--loop-inspiracion);
+  --color-loop-investigacion: var(--loop-investigacion);
+  --color-loop-creacion: var(--loop-creacion);
+  --color-loop-produccion: var(--loop-produccion);
+  --color-loop-feedback-ia: var(--loop-feedback-ia);
+  --color-loop-mejora: var(--loop-mejora);
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-surface: var(--surface);
+  --color-surface-card-hover: var(--surface-card-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+
+  --color-state-success: var(--state-success);
+  --color-state-warning: var(--state-warning);
+  --color-state-error: var(--state-error);
+  --color-state-info: var(--state-info);
+
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-focus-ring: var(--focus-ring);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  --text-xs: var(--fs-xs);
+  --text-sm: var(--fs-sm);
+  --text-base: var(--fs-base);
+  --text-md: var(--fs-md);
+  --text-lg: var(--fs-lg);
+  --text-xl: var(--fs-xl);
+  --text-2xl: var(--fs-2xl);
+  --text-3xl: var(--fs-3xl);
+  --text-4xl: var(--fs-4xl);
+
+  --leading-tight: var(--lh-tight);
+  --leading-snug: var(--lh-snug);
+  --leading-normal: var(--lh-normal);
+
+  --tracking-tight: var(--tracking-tight);
+  --tracking-wide: var(--tracking-wide);
+  --tracking-wider: var(--tracking-wider);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-focus: var(--shadow-focus);
+
+  --ease-standard: var(--ease-standard);
+
+  /* Media queries cannot resolve custom properties, so these must be literal
+     values — kept in sync with --bp-* above by convention. */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}

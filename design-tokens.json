@@ -31,6 +31,27 @@
       "code": { "value": "JetBrains Mono", "usage": "código o datos técnicos únicamente — nunca copy de producto", "weights": ["Regular", "Medium"] }
     }
   },
+  "spacing": {
+    "base": "4px",
+    "scale": [4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96],
+    "unit": "px",
+    "status": "decidido — validado en app/practica/nueva y app/feedback"
+  },
+  "breakpoints": {
+    "sm": "480px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "status": "decidido"
+  },
+  "radius": {
+    "sm": "6px",
+    "md": "10px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px",
+    "status": "decidido"
+  },
   "rules": {
     "gradients": "prohibidos — todos los colores van sólidos",
     "colorSemantics": "el color identifica la etapa del ciclo de entrenamiento (loop), nunca el dominio del skill tree",
@@ -38,9 +59,6 @@
     "layout": "mobile-first"
   },
   "notDefinedYet": [
-    "spacing scale (padding, gaps)",
-    "border radius scale",
-    "breakpoints",
-    "component library / sizing"
+    "component library / sizing más allá de components/ui/ del scaffold actual"
   ]
 }

@@ -59,14 +59,27 @@ El color identifica en qué momento del ciclo de entrenamiento de 8 pasos está 
 - El color identifica la etapa del loop, no el dominio. No se crean colores nuevos por dominio del skill tree.
 - Todo copy visible al usuario en español neutro/profesional — nunca slang.
 
+## Espaciado y radios (decidido)
+
+Propuestos por Claude Design durante el wireframe del feedback digest, y validados dos veces desde entonces: primero en el wireframe de baja fidelidad (3 pantallas: feedback digest, subir práctica, diagnóstico inicial), y ahora en código real — `app/practica/nueva/page.tsx` y `app/feedback/page.tsx`, verificados en mobile y desktop. Quedan cerrados.
+
+**Escala de espaciado** (base 4px):
+
+`4 · 8 · 12 · 16 · 24 · 32 · 40 · 48 · 64 · 80 · 96` (px)
+
+**Breakpoints** (mobile-first, min-width hacia arriba):
+
+`sm 480 · md 768 · lg 1024 · xl 1280` (px)
+
+**Radios de borde:**
+
+`sm 6 · md 10 · lg 16 · xl 24 · full 9999` (px) — pequeño en controles, generoso en tarjetas, consistente con "bordes suaves" de la filosofía visual.
+
 ## Qué NO está definido todavía (marcarlo, no inventarlo)
 
-- Escala de espaciado (padding, gaps entre elementos).
-- Radios de borde.
-- Breakpoints responsive.
-- Librería de componentes (botones, cards, inputs) y su sizing.
+- Librería de componentes (botones, cards, inputs) y su sizing — más allá de lo que ya existe en `components/ui/` del scaffold, que cubre solo lo necesario para las 2 pantallas construidas hasta ahora.
 
-Si Claude Design necesita alguno de estos valores para producir un diseño, debe proponerlos de forma explícita y consistente con esta identidad (dark, minimalista, Space Grotesk + Inter) — no asumirlos en silencio. Una vez usados en un primer diseño validado, se cierran acá y en `design-tokens.json`.
+Si Claude Design o Claude Code necesitan un valor nuevo fuera de lo ya cerrado arriba, deben proponerlo de forma explícita y consistente con esta identidad (dark, minimalista, Space Grotesk + Inter) — no asumirlo en silencio.
 
 ## Referencias
 
