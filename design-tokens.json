@@ -1,0 +1,46 @@
+{
+  "$schema": "creativity-lab-design-tokens-v1",
+  "color": {
+    "loop": {
+      "inspiracion": { "value": "#FFC83D", "description": "Fundamentos + Demostraciones" },
+      "investigacion": { "value": "#14D8E7", "description": "Prácticas guiadas" },
+      "creacion": { "value": "#FF6B6B", "description": "Retos" },
+      "produccion": { "value": "#2563EB", "description": "Ejecución/entrega del reto" },
+      "feedback_ia": { "value": "#8B5CF6", "description": "Feedback de IA" },
+      "mejora": { "value": "#BCFF6A", "description": "Repetición deliberada + Métricas + Portafolio" }
+    },
+    "neutral": {
+      "bg-primary": { "value": "#0F172A" },
+      "bg-secondary": { "value": "#111827" },
+      "surface": { "value": "#1E293B" },
+      "border": { "value": "#334155" },
+      "text-secondary": { "value": "#CBD5E1" },
+      "text-primary": { "value": "#F8FAFC" }
+    },
+    "state": {
+      "success": { "value": "#34D399" },
+      "warning": { "value": "#FBBF24" },
+      "error": { "value": "#EF4444" },
+      "info": { "value": "#3B82F6" }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": { "value": "Space Grotesk", "usage": "títulos/headings" },
+      "body": { "value": "Inter", "usage": "texto/UI" },
+      "code": { "value": "JetBrains Mono", "usage": "código o datos técnicos únicamente — nunca copy de producto" }
+    }
+  },
+  "rules": {
+    "gradients": "prohibidos — todos los colores van sólidos",
+    "colorSemantics": "el color identifica la etapa del ciclo de entrenamiento (loop), nunca el dominio del skill tree",
+    "mode": "dark-mode primero",
+    "layout": "mobile-first"
+  },
+  "notDefinedYet": [
+    "spacing scale (padding, gaps)",
+    "border radius scale",
+    "breakpoints",
+    "component library / sizing"
+  ]
+}
