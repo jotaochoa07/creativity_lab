@@ -26,9 +26,9 @@
   },
   "typography": {
     "fontFamily": {
-      "heading": { "value": "Space Grotesk", "usage": "títulos/headings" },
-      "body": { "value": "Inter", "usage": "texto/UI" },
-      "code": { "value": "JetBrains Mono", "usage": "código o datos técnicos únicamente — nunca copy de producto" }
+      "heading": { "value": "Space Grotesk", "usage": "títulos/headings", "weights": ["Light", "Regular", "Medium", "Bold", "Black"] },
+      "body": { "value": "Inter", "usage": "texto/UI", "weights": ["Regular", "Medium", "Semibold"] },
+      "code": { "value": "JetBrains Mono", "usage": "código o datos técnicos únicamente — nunca copy de producto", "weights": ["Regular", "Medium"] }
     }
   },
   "rules": {

@@ -43,9 +43,13 @@ El color identifica en qué momento del ciclo de entrenamiento de 8 pasos está 
 
 ## Tipografía
 
-- **Títulos/headings:** Space Grotesk
-- **Texto/UI:** Inter
-- **Código/datos técnicos:** JetBrains Mono — excepción reservada solo para bloques de código o datos, nunca para copy de producto.
+- **Títulos/headings:** Space Grotesk — pesos: Light, Regular, Medium, Bold, Black.
+- **Texto/UI:** Inter — pesos: Regular, Medium, Semibold.
+- **Código/datos técnicos:** JetBrains Mono — pesos: Regular, Medium. Excepción reservada solo para bloques de código o datos, nunca para copy de producto.
+
+## Colisión de nombres — Investigación / Producción
+
+"Investigación" y "Producción" son, a la vez, nombres de **etapa del loop de color** (arriba) y nombres de **dominio** del skill tree (`docs/creator-lab-domains.md`, dominios 1 y 8, ambos 🔒 Próximamente, fuera del MVP). Son conceptos distintos que van a convivir en el producto. No crear un color de dominio para "Investigación" pensando que ya tiene uno — el que existe es de etapa, no de dominio. Si esto genera confusión real una vez haya UI construida, se revisita el nombre de uno de los dos (ver `CLAUDE.md` sección 4).
 
 ## Reglas duras (no negociables)
 
